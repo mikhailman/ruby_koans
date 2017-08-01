@@ -13,8 +13,12 @@
 # and
 #   about_triangle_project_2.rb
 #
-def triangle(a, b, c)
-  # WRITE THIS CODE
+def triangle(a, b, c)  # WRITE THIS CODE
+  raise TriangleError.new if ([a, b, c].select {|i| i <= 0}.size > 0)
+  raise TriangleError.new if (a >= b + c) ||(b >= a + c) || (c >= a + b)
+  return :equilateral if ([a, b, c].uniq.size == 3)
+  return :isosceles if ([a, b, c].uniq.size == 2)
+  return :scalene if ([a, b, c].uniq.size == 1)
 end
 
 # Error class used in part 2.  No need to change this code.

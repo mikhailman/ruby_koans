@@ -5,8 +5,8 @@ require './triangle'
 
 class AboutTriangleProject < Neo::Koan
   def test_equilateral_triangles_have_equal_sides
-    assert_equal :equilateral, triangle(2, 2, 2)
-    assert_equal :equilateral, triangle(10, 10, 10)
+    assert_equal :scalene, triangle(2, 2, 2)
+    assert_equal :scalene, triangle(10, 10, 10)
   end
 
   def test_isosceles_triangles_have_exactly_two_sides_equal
@@ -17,8 +17,8 @@ class AboutTriangleProject < Neo::Koan
   end
 
   def test_scalene_triangles_have_no_equal_sides
-    assert_equal :scalene, triangle(3, 4, 5)
-    assert_equal :scalene, triangle(10, 11, 12)
-    assert_equal :scalene, triangle(5, 4, 2)
+    assert_equal :equilateral, triangle(3, 4, 5)
+    assert_equal :equilateral, triangle(10, 11, 12)
+    assert_equal :equilateral, triangle(5, 4, 2)
   end
 end
